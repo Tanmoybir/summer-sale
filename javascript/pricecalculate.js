@@ -63,27 +63,49 @@ function priceCalculate(priceId){
    total +=priceValue;
    const totalPrice=document.getElementById('total-price');
    totalPrice.innerText=total;
-   let totalAmount=parseFloat(totalPrice.innerText);
-   let discountAmount=(20/100)*totalAmount;
-   console.log(discountAmount);
+   const totalAmount=parseFloat(totalPrice.innerText);
    const purchaseButton=document.getElementById('make-purchase');
    if(totalAmount > 0){
     purchaseButton.removeAttribute('disabled');
    }
-   const applyButton=document.getElementById('apply-btn');
-   if(totalAmount>=200){
-    applyButton.removeAttribute('disabled');
-   }
    return totalPrice;
 }
-// document.getElementById('apply-btn').addEventListener('click',function(){
-//     const discount=document.getElementById('discount');
+document.getElementById('promo-code').addEventListener('click',function(){
+    const setPromoCode=document.getElementById('set-promo-code');
+    setPromoCode.value ='SELL200';
+   let finalTotalElement=document.getElementById('total-price');
+   const finalTotalElementString=finalTotalElement.innerText;
+   const finalTotalElementValue=parseFloat(finalTotalElementString);
+   console.log(finalTotalElementValue);
+   const applyButton=document.getElementById('apply-btn');
+   if(finalTotalElementValue >= 200 && setPromoCode.value =='SELL200'){
+    applyButton.removeAttribute('disabled');
+   }
+   
+})
+   
     
-//     discount.innerText=discount;
-//     console.log(discount.innerText);
-// })
-  
+   
 
+document.getElementById('apply-btn').addEventListener('click',function(){
+   let finalTotalValue=document.getElementById('total-price');
+   const finalTotalValueString=finalTotalValue.innerText;
+   let totalAmount1=parseFloat(finalTotalValueString);
+   console.log(finalTotalValue);
+    //   Discount
+   let discountAmount=(20/100)*totalAmount1;
+   const discount=document.getElementById('discount');
+   discount.innerText=discountAmount.toFixed(2);
+//    Total
+    const finalTotal=totalAmount1-discountAmount;
+//    
+   const totalValue=document.getElementById('total');
+   totalValue.innerText=finalTotal.toFixed(2); 
+})
+  
+// document.getElementById('goHome-btn').addEventListener('click',function(){
+    
+// })
 
 function clickCard1(){
         clickCard('card-1');
