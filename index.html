@@ -65,7 +65,7 @@
                             <input type="radio" name="rating-2" class="mask mask-star-2 bg-amber-400" />
                           </div>
                       <p id="card-1">K. Accessories</p>
-                      <p><span>49.00</span> TK</p>
+                      <p><span id="price-1">49.00</span> TK</p>
                       </div>
                     </div>
                  
@@ -84,7 +84,7 @@
                             <input type="radio" name="rating-2-1" class="mask mask-star-2 bg-amber-400" />
                           </div>
                       <p id="card-2">D. Accessories</p>
-                      <p><span>25.00</span> TK</p>
+                      <p><span id="price-2">25.00</span> TK</p>
                       </div>
                     </div>
                   <!-- Third Card -->
@@ -102,7 +102,7 @@
                             <input type="radio" name="rating-2-2" class="mask mask-star-2 bg-amber-400" />
                           </div>
                       <p id="card-3">Home Cooker</p>
-                      <p> <span>49.00</span> TK</p>
+                      <p> <span id="price-3">49.00</span> TK</p>
                       </div>
                     </div>
                </div>
@@ -124,7 +124,7 @@
                           <input type="radio" name="rating-2-3" class="mask mask-star-2 bg-amber-400" />
                         </div>
                     <p id="card-4">Sports Back Cap</p>
-                    <p><span>49.00</span> TK</p>
+                    <p><span id="price-4">49.00</span> TK</p>
                     </div>
                   </div>
                 <!-- Fifth Card -->
@@ -142,7 +142,7 @@
                           <input type="radio" name="rating-2-4" class="mask mask-star-2 bg-amber-400" />
                         </div>
                     <p id="card-5">Full Jersey Set</p>
-                    <p><span>69.00</span> TK</p>
+                    <p><span id="price-5">69.00</span> TK</p>
                     </div>
                   </div>
                   <!-- Sixth Card -->
@@ -160,7 +160,7 @@
                               <input type="radio" name="rating-2-5" class="mask mask-star-2 bg-amber-400" />
                             </div>
                         <p id="card-6">Sports cates</p>
-                        <p><span>159.00</span> TK</p>
+                        <p><span id="price-6">159.00</span> TK</p>
                         </div>
                       </div>
                </div>
@@ -169,22 +169,36 @@
             <div class="mt-10 ">
                 <div class="border-b-2 pb-3 shadow-lg">
                   <p class="text-2xl font-medium">Have coupon?</p>
-                <div class="border-2 text-end">
-                  <input class="border-none" type="text" placeholder="Coupon code">
-                  <button class="bg-primary text-white px-5 py-4">Apply</button>
+                <div class="border-2 text-end rounded-md">
+                  <input class="border-none px-4" type="text" placeholder="Coupon code">
+                  <button id="apply-btn" class="bg-primary text-white px-5 py-4 rounded-l-none rounded-r-md" disabled>Apply</button>
                 </div>
                 </div>
                 <!--  -->
-                <div class="border-b-2 mb-2 shadow-lg text-2xl font-medium">
+                <div class="border-b-2 mb-2 shadow-lg text-2xl font-medium mt-4">
                   <div id="calculate"></div>
-                  <p>Total price:<span>0</span>TK</p>
-                  <p>Discount:<span>0</span>TK</p>
+                  <p>Total price:<span id="total-price">0</span>TK</p>
+                  <p>Discount:<span id="discount">0</span>TK</p>
                   <p>Total:<span>0</span>TK</p>
                 </div>
                 <!--  -->
-                <div class="text-center">
-                  <button class="bg-primary text-white px-16 py-4">Make Purchase</button>
-                </div>
+               <!-- Open the modal using ID.showModal() method -->
+<div class="text-center">
+  <button id="make-purchase" class="bg-primary text-white px-16 py-4 rounded-lg" onclick="my_modal_1.showModal()" disabled>Make Purchase</button>
+</div>
+<dialog id="my_modal_1" class="modal">
+  <form method="dialog" class="modal-box">
+   <div class="flex justify-center">
+    <img src="./images/congo.png" alt="" >
+   </div>
+    <h3 class="font-bold text-lg text-center">Congratulations</h3>
+    <p class="py-4 text-center">Your Purchase the product</p>
+    <div class=" text-center">
+      <!-- if there is a button in form, it will close the modal -->
+      <button class="btn">Go Home</button>
+    </div>
+  </form>
+</dialog>
             </div>
         </section>
     </main>
