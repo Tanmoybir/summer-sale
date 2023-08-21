@@ -5,6 +5,7 @@ function clickCard(cardId){
     const card=cardName.innerText;
     const li=document.createElement('li');
     li.innerText=card;
+    // li.listStyleType="1";
     entry.appendChild(li);
     return entry;
 }
